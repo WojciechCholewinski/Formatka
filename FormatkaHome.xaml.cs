@@ -26,7 +26,9 @@ namespace Formatka
         }
         private void Add_New_Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            // Open new form to create new Order
+            NewOrderPage newOrderPage = new NewOrderPage();
+            this.NavigationService.Navigate(newOrderPage);
         }
         private void Open_Button_Click(object sender, RoutedEventArgs e)
         {

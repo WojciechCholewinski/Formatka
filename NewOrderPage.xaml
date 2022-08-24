@@ -9,6 +9,11 @@
       Title="Formatka - Dodaj nowe zamówienie">
 
     <Grid>
+
         
+        
+        <Grid.Background>
+            <ImageBrush ImageSource="watermark.png"></ImageBrush>
+        </Grid.Background>
     </Grid>
 </Page>
