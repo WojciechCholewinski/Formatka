@@ -9,6 +9,32 @@
       Title="Formatka - Home">
 
     <Grid>
-        
+
+        <WrapPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+            <Button Content="      Dodaj nowe" Height="50" Width="150" Margin="10"
+                    Click="Add_New_Button_Click"/>
+            <Button Content="      Otwarte" Height="50" Width="150" Margin="10"
+                    Click="Open_Button_Click"/>
+            <Button Content="      Zamknięte" Height="50" Width="150" Margin="10"
+                    Click="Closed_Button_Click"/>
+            <Button Content="      Portfel" Height="50" Width="150" Margin="10"
+                    Click="Wallet_Button_Click"/>
+        </WrapPanel>
+
+        <WrapPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Image Height="50" Width="50" Margin="10,10,110,10"
+             Source="C:/Users/Wojtek/OneDrive/Pulpit/Projekt_formatka/icons8-notes-66.png" />
+            <Image Height="46" Width="50" Margin="10,12,110,12"
+             Source="C:\Users\Wojtek\OneDrive\Pulpit\Projekt_formatka\Bearicons\icons8-page-64.png" />
+            <Image Height="46" Width="50" Margin="10,12,110,12"
+             Source="C:\Users\Wojtek\OneDrive\Pulpit\Projekt_formatka\Bearicons\icons8-page-64 (1).png" />
+            <Image Height="50" Width="50" Margin="10,10,110,10"
+             Source="C:\Users\Wojtek\OneDrive\Pulpit\Projekt_formatka\icons8-dollar-coin-50.png" />
+        </WrapPanel>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="watermark.png"></ImageBrush>
+        </Grid.Background>
     </Grid>
 </Page>

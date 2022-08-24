@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Formatka
 {
     /// <summary>
-    /// Interaction logic for NewOrder.xaml
+    /// Interaction logic for NewOrderPage.xaml
     /// </summary>
-    public partial class NewOrder : Page
+    public partial class NewOrderPage : Page
     {
-        public NewOrder()
+        public NewOrderPage()
         {
             InitializeComponent();
         }

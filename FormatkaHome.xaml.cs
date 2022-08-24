@@ -24,5 +24,22 @@ namespace Formatka
         {
             InitializeComponent();
         }
+        private void Add_New_Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+        private void Open_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Closed_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void Wallet_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
