@@ -24,5 +24,20 @@ namespace Formatka
         {
             InitializeComponent();
         }
+
+        private void Internet_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void Mobile_Number_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Package_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
+    
 }

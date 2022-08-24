@@ -10,7 +10,14 @@
 
     <Grid>
 
-        
+        <WrapPanel VerticalAlignment="Top" HorizontalAlignment="Center">
+            <Button Width="125" Click="Internet_Button_Click" Padding="10"  Margin="30" Content="Internet">
+            </Button>
+            <Button Width="125" Click="Package_Button_Click" Padding="10"  Margin="30" Content="Pakiet">
+            </Button>
+            <Button Width="125" Click="Mobile_Number_Button_Click" Padding="10"  Margin="30" Content="Numer komórkowy">
+            </Button>
+        </WrapPanel>
         
         <Grid.Background>
             <ImageBrush ImageSource="watermark.png"></ImageBrush>
