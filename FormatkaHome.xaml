@@ -24,13 +24,13 @@
 
         <WrapPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Image Height="50" Width="50" Margin="10,10,110,10"
-             Source="C:/Users/Wojtek/OneDrive/Pulpit/Projekt_formatka/icons8-notes-66.png" />
+             Source="Icons\Add_New_Icon.png" />
             <Image Height="46" Width="50" Margin="10,12,110,12"
-             Source="C:\Users\Wojtek\OneDrive\Pulpit\Projekt_formatka\Bearicons\icons8-page-64.png" />
+             Source="Icons\Open_Icon.png" />
             <Image Height="46" Width="50" Margin="10,12,110,12"
-             Source="C:\Users\Wojtek\OneDrive\Pulpit\Projekt_formatka\Bearicons\icons8-page-64 (1).png" />
+             Source="Icons\Closed_Icon.png" />
             <Image Height="50" Width="50" Margin="10,10,110,10"
-             Source="C:\Users\Wojtek\OneDrive\Pulpit\Projekt_formatka\icons8-dollar-coin-50.png" />
+             Source="Icons\Wallet_Icon.png" />
         </WrapPanel>
 
         <Grid.Background>

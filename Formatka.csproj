@@ -111,5 +111,13 @@
   <ItemGroup>
     <Resource Include="watermark.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Add_New_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Closed_Icon.png" />
+    <Resource Include="Icons\Open_Icon.png" />
+    <Resource Include="Icons\Wallet_Icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
