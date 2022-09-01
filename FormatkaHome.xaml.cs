@@ -43,5 +43,23 @@ namespace Formatka
         {
 
         }
+
+        //private void Button_GotMouseCapture(object sender, MouseEventArgs e)
+        //{
+        //    Button tb = e.Source as Button;
+        //    tb.Background = Brushes.Red;
+        //}
+        //private void OnGotFocusHandler(object sender, RoutedEventArgs e)
+        //{
+        //    Button tb = e.Source as Button;
+        //    tb.Background = Brushes.Red;
+        //}
+        //// Raised when Button losses focus.
+        //// Changes the color of the Button back to white.
+        //private void OnLostFocusHandler(object sender, RoutedEventArgs e)
+        //{
+        //    Button tb = e.Source as Button;
+        //    tb.Background = Brushes.White;
+        //}
     }
 }

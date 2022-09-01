@@ -6,6 +6,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Formatka"
         mc:Ignorable="d"
-        Title="Formatka" Height="800" Width="1300" MinHeight="400" MinWidth="650">
+        Title="Formatka" Height="800" Width="1300" MinHeight="400" MinWidth="650" WindowStartupLocation="CenterScreen">
 
 </NavigationWindow>

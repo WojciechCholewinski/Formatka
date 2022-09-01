@@ -10,15 +10,82 @@
 
     <Grid>
 
-        <WrapPanel VerticalAlignment="Top" HorizontalAlignment="Center">
+        <!--<WrapPanel VerticalAlignment="Top" HorizontalAlignment="Center">
             <Button Width="125" Click="Internet_Button_Click" Padding="10"  Margin="30" Content="Internet">
             </Button>
             <Button Width="125" Click="Package_Button_Click" Padding="10"  Margin="30" Content="Pakiet">
             </Button>
             <Button Width="125" Click="Mobile_Number_Button_Click" Padding="10"  Margin="30" Content="Numer komórkowy">
             </Button>
+        </WrapPanel>-->
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <WrapPanel Width="500" Orientation="Vertical" Margin="0,20,0,0" >
+                <Label Width="500" HorizontalContentAlignment="Center" FontFamily="Poppins" FontWeight="Medium"  FontSize="15" BorderBrush="#D4E4FC" BorderThickness="2" Padding="10" Background="#DCE8FA" >Dane klienta</Label>
+                
+                <!--Imię i nazwisko-->
+                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                    <WrapPanel Orientation="Vertical" Margin="10">
+                        <Label FontFamily="Poppins" FontSize="13" >Imię:</Label>
+                        <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
+                    </WrapPanel>
+
+                    <WrapPanel Orientation="Vertical" Margin="10">
+                        <Label FontFamily="Poppins" FontSize="13" >Nazwisko:</Label>
+                        <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
+                    </WrapPanel>
+                </WrapPanel>
+
+                <!--PESEL i Numer dowodu-->
+                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                    <WrapPanel Orientation="Vertical" Margin="10">
+                        <Label FontFamily="Poppins" FontSize="13" >PESEL:</Label>
+                        <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
+                    </WrapPanel>
+
+                    <WrapPanel Orientation="Vertical" Margin="10">
+                        <Label FontFamily="Poppins" FontSize="13" >Numer dowodu:</Label>
+                        <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
+                    </WrapPanel>
+                </WrapPanel>
+
+                <!--Mail i numer kontaktowy-->
+                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                    <WrapPanel Orientation="Vertical" Margin="10">
+                        <Label FontFamily="Poppins" FontSize="13" >Mail:</Label>
+                        <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
+                    </WrapPanel>
+
+                    <WrapPanel Orientation="Vertical" Margin="10">
+                        <Label FontFamily="Poppins" FontSize="13" >Numer kontaktowy:</Label>
+                        <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
+                    </WrapPanel>
+                </WrapPanel>
+
+                <!--Miejscowość i Adres szczegółowy-->
+                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                    <WrapPanel Orientation="Vertical" Margin="10">
+                        <Label FontFamily="Poppins" FontSize="13" >Miejscowość:</Label>
+                        <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
+                    </WrapPanel>
+
+                    <WrapPanel Orientation="Vertical" Margin="10">
+                        <Label FontFamily="Poppins" FontSize="13" >Adres szczegółowy:</Label>
+                        <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
+                    </WrapPanel>
+                </WrapPanel>
+
+            </WrapPanel>
+
+            <WrapPanel Width="500" Orientation="Vertical" Margin="0,20,0,0" >
+                <Label Width="500" HorizontalContentAlignment="Center"  FontFamily="Poppins" FontWeight="Medium"  FontSize="15" BorderBrush="#C9E0FF" BorderThickness="2" Padding="10" Background="#D4E4FC">Szczegóły zamówienia</Label>
+                <TextBlock>Dane zamówienia</TextBlock>
+                <TextBlock>Dane zamówienia</TextBlock>
+            </WrapPanel>
         </WrapPanel>
-        
+
+        <!--<Border Padding="2" CornerRadius="10" BorderBrush="Red" BorderThickness="2">
+        </Border>-->
+
         <Grid.Background>
             <ImageBrush ImageSource="watermark.png"></ImageBrush>
         </Grid.Background>

@@ -11,26 +11,26 @@
     <Grid>
 
         <WrapPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150">
-            <Button BorderBrush="DarkGray" BorderThickness="1"  Click="Add_New_Button_Click" Margin="0,10,0,10">
+            <Button Background="#C9E0FF" BorderBrush="DarkGray" BorderThickness="1"  Click="Add_New_Button_Click" Margin="0,10,0,10">
                 <StackPanel Height="60" Width="150" Orientation="Horizontal">
                     <Image Source="Icons/Add_New_Icon.png" Width="50" Height="50" />
                     <TextBlock FontFamily="Poppins" FontWeight="Medium"  FontSize="15" VerticalAlignment="Center" Margin="10,0,0,0">Dodaj nowe</TextBlock>
                 </StackPanel>
             </Button>
-            <Button BorderBrush="DarkGray" BorderThickness="1" Click="Open_Button_Click" Margin="0,10,0,10">
+            <Button Background="#C9E0FF" BorderBrush="DarkGray" BorderThickness="1" Click="Open_Button_Click" Margin="0,10,0,10">
                 <StackPanel Height="60" Width="150" Orientation="Horizontal">
                     <Image Source="Icons/Open_Icon.png" Width="50" Height="40" />
                     <TextBlock FontFamily="Poppins" FontWeight="Medium"  FontSize="15"  VerticalAlignment="Center" Margin="15,0,0,0">Otwarte</TextBlock>
                 </StackPanel>
 
             </Button>
-            <Button BorderBrush="DarkGray" BorderThickness="1" Click="Closed_Button_Click" Margin="0,10,0,10">
+            <Button Background="#C9E0FF" BorderBrush="DarkGray" BorderThickness="1" Click="Closed_Button_Click" Margin="0,10,0,10">
                 <StackPanel Height="60" Width="150" Orientation="Horizontal">
                     <Image Source="Icons/Closed_Icon.png" Width="50" Height="40" />
                     <TextBlock FontFamily="Poppins" FontWeight="Medium" FontSize="15" VerticalAlignment="Center" Margin="15,0,0,0">Zamknięte</TextBlock>
                 </StackPanel>
             </Button>
-            <Button BorderBrush="DarkGray" BorderThickness="1" Click="Wallet_Button_Click" Margin="0,10,0,10">
+            <Button Background="#C9E0FF" BorderBrush="DarkGray" BorderThickness="1" Click="Wallet_Button_Click" Margin="0,10,0,10">
                 <StackPanel Height="60" Width="150" Orientation="Horizontal">
                     <Image Source="Icons/Wallet_Icon.png" Width="50" Height="50" />
                     <TextBlock FontFamily="Poppins" FontWeight="Medium" FontSize="15" VerticalAlignment="Center" Margin="15,0,0,0">Portfel</TextBlock>
