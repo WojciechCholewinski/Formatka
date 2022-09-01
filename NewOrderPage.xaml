@@ -19,9 +19,11 @@
             </Button>
         </WrapPanel>-->
         <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+            <!--Dane klienta-->
             <WrapPanel Width="500" Orientation="Vertical" Margin="0,20,0,0" >
                 <Label Width="500" HorizontalContentAlignment="Center" FontFamily="Poppins" FontWeight="Medium"  FontSize="15" BorderBrush="#D4E4FC" BorderThickness="2" Padding="10" Background="#DCE8FA" >Dane klienta</Label>
-                
+
                 <!--Imię i nazwisko-->
                 <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" >
                     <WrapPanel Orientation="Vertical" Margin="10">
@@ -76,10 +78,37 @@
 
             </WrapPanel>
 
+            <!--Szczegóły zamówienia-->
             <WrapPanel Width="500" Orientation="Vertical" Margin="0,20,0,0" >
                 <Label Width="500" HorizontalContentAlignment="Center"  FontFamily="Poppins" FontWeight="Medium"  FontSize="15" BorderBrush="#C9E0FF" BorderThickness="2" Padding="10" Background="#D4E4FC">Szczegóły zamówienia</Label>
-                <TextBlock>Dane zamówienia</TextBlock>
-                <TextBlock>Dane zamówienia</TextBlock>
+
+                <!--Rodzaj usługi-->
+                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                    <WrapPanel Orientation="Vertical" Margin="10">
+                        <Label FontFamily="Poppins" FontSize="13" >Rodzaj usługi:</Label>
+                        <ComboBox Name="typeOfInternet" Padding="3" MinWidth="150" IsEditable="False">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="2">
+                                        <TextBlock Text="{Binding Title}" />
+                                    </Grid>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </WrapPanel>
+
+                    <WrapPanel Orientation="Vertical" Margin="10">
+                        <Label FontFamily="Poppins" FontSize="13" >Długość umowy:</Label>
+                        <ComboBox Padding="3" MinWidth="150" IsEditable="False">
+                            <ComboBoxItem>ComboBox Item #1</ComboBoxItem>
+                            <ComboBoxItem>ComboBox Item #2</ComboBoxItem>
+                            <ComboBoxItem>ComboBox Item #3</ComboBoxItem>
+                        </ComboBox>
+                    </WrapPanel>
+                </WrapPanel>
+                
+                
+
             </WrapPanel>
         </WrapPanel>
 
