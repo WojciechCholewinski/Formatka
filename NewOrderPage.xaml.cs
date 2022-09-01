@@ -26,12 +26,21 @@ namespace Formatka
             InitializeComponent();
             //Services services = new Services();
             //typeOfInternet.ItemsSource = services.ToString();
-            List<TodoItem> items = new List<TodoItem>();
-            items.Add(new TodoItem() { Title = "Internet",});
-            items.Add(new TodoItem() { Title = "Numer komórkowy", });
-            items.Add(new TodoItem() { Title = "Pakiet internet + numer", });
 
-            typeOfInternet.ItemsSource = items;
+            List<ContractDuration> durationItems = new List<ContractDuration>();
+            durationItems.Add(new ContractDuration() { Duration = "24 miesiące", });
+            durationItems.Add(new ContractDuration() { Duration = "12 miesięcy", });
+            durationItems.Add(new ContractDuration() { Duration = "Czas nieokreślony", });
+
+            contractDuration.ItemsSource = durationItems;
+
+
+            List<ServiceType> typeOfItems = new List<ServiceType>();
+            typeOfItems.Add(new ServiceType() { Type = "Internet",});
+            typeOfItems.Add(new ServiceType() { Type = "Numer komórkowy", });
+            typeOfItems.Add(new ServiceType() { Type = "Pakiet internet + numer", });
+
+            serviceType.ItemsSource = typeOfItems;
         }
 
         //private void Internet_Button_Click(object sender, RoutedEventArgs e)
@@ -49,9 +58,14 @@ namespace Formatka
         //}
 
     }
-    public class TodoItem
+    public class ServiceType
     {
-        public string Title { get; set; }
+        public string Type { get; set; }
     }
+    public class ContractDuration
+    {
+        public string Duration { get; set; }
+    }
+
     
 }
