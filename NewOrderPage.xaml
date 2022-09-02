@@ -104,17 +104,51 @@
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <Grid Margin="2">
-                                        <TextBlock Text="{Binding Type}" />
+                                        <TextBlock Text="{Binding Type1}" />
+                                    </Grid>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </WrapPanel>
+                    
+                </WrapPanel>
+
+                <!--Podrodzaj wybranej usługi-->
+                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+
+                    <WrapPanel Orientation="Vertical" Margin="10">
+                        <Label FontFamily="Poppins" FontSize="13" >Nazwa usługi:</Label>
+                        <ComboBox Name="serviceName" Padding="3" MinWidth="150" IsEditable="False">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="2">
+                                        <TextBlock Text="{Binding Name}" />
                                     </Grid>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
                     </WrapPanel>
 
-                    
+                    <WrapPanel Orientation="Vertical" Margin="10">
+                        <Label FontFamily="Poppins" FontSize="13" >Data montażu:</Label>
+                        <ComboBox Name="serviceType2" Padding="3" MinWidth="150" IsEditable="False">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="2">
+                                        <Calendar />
+                                    </Grid>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </WrapPanel>
+
                 </WrapPanel>
-                
-                
+
+                <StackPanel HorizontalAlignment="Center"  Margin="10">
+                    <Calendar Name="cldSample" SelectionMode="MultipleRange" SelectedDate="10.10.2013" />
+                    <Label>Selected date:</Label>
+                    <TextBox Text="{Binding ElementName=cldSample, Path=SelectedDate, StringFormat=dd-MM-yyyy, UpdateSourceTrigger=PropertyChanged}" />
+                </StackPanel>
 
             </WrapPanel>
         </WrapPanel>

@@ -24,6 +24,8 @@ namespace Formatka
         public NewOrderPage()
         {
             InitializeComponent();
+            cldSample.SelectedDate = DateTime.Now.AddDays(1);
+
             //Services services = new Services();
             //typeOfInternet.ItemsSource = services.ToString();
 
@@ -36,11 +38,25 @@ namespace Formatka
 
 
             List<ServiceType> typeOfItems = new List<ServiceType>();
-            typeOfItems.Add(new ServiceType() { Type = "Internet",});
-            typeOfItems.Add(new ServiceType() { Type = "Numer komórkowy", });
-            typeOfItems.Add(new ServiceType() { Type = "Pakiet internet + numer", });
+            typeOfItems.Add(new ServiceType() { Type1 = "Internet"});
+            typeOfItems.Add(new ServiceType() { Type1 = "Numer komórkowy"});
+            typeOfItems.Add(new ServiceType() { Type1 = "Pakiet internet + numer"});
 
             serviceType.ItemsSource = typeOfItems;
+
+            
+            List<ServiceName> nameOfItems = new List<ServiceName>();
+            nameOfItems.Add(new ServiceName() { Name = "Plan 40", });
+            nameOfItems.Add(new ServiceName() { Name = "Plan 50", });
+            nameOfItems.Add(new ServiceName() { Name = "Plan 60", });
+            nameOfItems.Add(new ServiceName() { Name = "Plan 80", });
+            nameOfItems.Add(new ServiceName() { Name = "Internet domowy", });
+            nameOfItems.Add(new ServiceName() { Name = "Internet + TV", });
+            nameOfItems.Add(new ServiceName() { Name = "Pakiet Standard", });
+            nameOfItems.Add(new ServiceName() { Name = "Pakiet Extra", });
+            nameOfItems.Add(new ServiceName() { Name = "Pakiet Premium", });
+
+            serviceName.ItemsSource = nameOfItems;
         }
 
         //private void Internet_Button_Click(object sender, RoutedEventArgs e)
@@ -60,12 +76,16 @@ namespace Formatka
     }
     public class ServiceType
     {
-        public string Type { get; set; }
+        public string Type1 { get; set; }
     }
     public class ContractDuration
     {
         public string Duration { get; set; }
     }
+    public class ServiceName
+    {
+        public string Name { get; set; }
+    }
 
-    
+
 }
