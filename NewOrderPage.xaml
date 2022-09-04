@@ -18,6 +18,7 @@
             <Button Width="125" Click="Mobile_Number_Button_Click" Padding="10"  Margin="30" Content="Numer komórkowy">
             </Button>
         </WrapPanel>-->
+        <WrapPanel HorizontalAlignment="Center" Orientation="Vertical" VerticalAlignment="Top">
         <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
 
             <!--Dane klienta-->
@@ -80,7 +81,7 @@
 
             <!--Szczegóły zamówienia-->
             <WrapPanel Width="500" Orientation="Vertical" Margin="0,20,0,0" >
-                <Label Width="500" HorizontalContentAlignment="Center"  FontFamily="Poppins" FontWeight="Medium"  FontSize="15" BorderBrush="#C9E0FF" BorderThickness="2" Padding="10" Background="#D4E4FC">Szczegóły zamówienia</Label>
+                    <Label Width="500" HorizontalContentAlignment="Center"  FontFamily="Poppins" FontWeight="Medium" FontSize="15" BorderBrush="#D4E4FC" BorderThickness="2" Padding="10" Background="#DCE8FA">Szczegóły zamówienia</Label>
 
                 <!--Długość umowy i Rodzaj usługi-->
                 <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" >
@@ -132,24 +133,30 @@
                     <WrapPanel Orientation="Vertical" Margin="10">
                         <Label FontFamily="Poppins" FontSize="13" >Data montażu:</Label>
                         <ComboBox Name="serviceType2" Padding="3" MinWidth="150" IsEditable="False">
-                            <ComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <Grid Margin="2">
-                                        <Calendar />
-                                    </Grid>
-                                </DataTemplate>
-                            </ComboBox.ItemTemplate>
+                            <ComboBoxItem>ComboBox Item #1</ComboBoxItem>
+                            <ComboBoxItem>ComboBox Item #2</ComboBoxItem>
+                            <ComboBoxItem>ComboBox Item #3</ComboBoxItem>
                         </ComboBox>
                     </WrapPanel>
 
                 </WrapPanel>
 
+                <!--Kalendarz-->
                 <StackPanel HorizontalAlignment="Center"  Margin="10">
+                    <Label FontFamily="Poppins" FontSize="13" >Wybierz datę instalacji:</Label>
                     <Calendar Name="cldSample" SelectionMode="MultipleRange" SelectedDate="10.10.2013" />
-                    <Label>Selected date:</Label>
-                    <TextBox Text="{Binding ElementName=cldSample, Path=SelectedDate, StringFormat=dd-MM-yyyy, UpdateSourceTrigger=PropertyChanged}" />
+                    <Label HorizontalContentAlignment="Center" >Wybrana data:</Label>
+                    <TextBox Width="100" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" TextAlignment="Center" Text="{Binding ElementName=cldSample, Path=SelectedDate, StringFormat=dd-MM-yyyy, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
 
+            </WrapPanel>
+        </WrapPanel>
+
+            <!--Przycisk zapisz zamówienie-->
+            <WrapPanel>
+                <Button Click="Save_Button_Click" Width="1000" HorizontalContentAlignment="Center" FontFamily="Poppins" FontWeight="SemiBold"  FontSize="15" BorderBrush="#C9E0FF" BorderThickness="2" Padding="3" Background="#D4E4FC" Margin="0,50,0,0">
+                    Zapisz zamówienie
+                </Button>
             </WrapPanel>
         </WrapPanel>
 

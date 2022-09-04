@@ -59,6 +59,13 @@ namespace Formatka
             serviceName.ItemsSource = nameOfItems;
         }
 
+        private void Save_Button_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO: dodać zapisanie zamówienia
+
+            MessageBox.Show("Zamówienie zapisano", "Udało się", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
         //private void Internet_Button_Click(object sender, RoutedEventArgs e)
         //{
 
