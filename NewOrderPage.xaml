@@ -64,15 +64,15 @@
                     </WrapPanel>
                 </WrapPanel>
 
-                <!--Miejscowość i Adres szczegółowy-->
+                <!--Adres główny i Adres dostawy/instalacji-->
                 <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" >
                     <WrapPanel Orientation="Vertical" Margin="10">
-                        <Label FontFamily="Poppins" FontSize="13" >Miejscowość:</Label>
+                        <Label FontFamily="Poppins" FontSize="13" >Adres główny:</Label>
                         <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
                     </WrapPanel>
 
                     <WrapPanel Orientation="Vertical" Margin="10">
-                        <Label FontFamily="Poppins" FontSize="13" >Adres szczegółowy:</Label>
+                        <Label FontFamily="Poppins" FontSize="13" >Adres dostawy/instalacji:</Label>
                         <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
                     </WrapPanel>
                 </WrapPanel>
