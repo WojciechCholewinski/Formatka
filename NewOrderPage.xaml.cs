@@ -29,34 +29,65 @@ namespace Formatka
             //Services services = new Services();
             //typeOfInternet.ItemsSource = services.ToString();
 
-            List<ContractDuration> durationItems = new List<ContractDuration>();
-            durationItems.Add(new ContractDuration() { Duration = "24 miesiące", });
-            durationItems.Add(new ContractDuration() { Duration = "12 miesięcy", });
-            durationItems.Add(new ContractDuration() { Duration = "Czas nieokreślony", });
-
+            List<ContractDuration> durationItems = new List<ContractDuration>()
+            {
+                new ContractDuration(){ Id=1, Duration = "24 miesiące"},
+                new ContractDuration(){ Id=2, Duration = "12 miesięcy"},
+                new ContractDuration(){ Id=3, Duration = "Czas nieokreślony"}
+            };
             contractDuration.ItemsSource = durationItems;
+            contractDuration.DisplayMemberPath = "Duration";
+            contractDuration.SelectedValuePath = "Id";
 
 
-            List<ServiceType> typeOfItems = new List<ServiceType>();
-            typeOfItems.Add(new ServiceType() { Type1 = "Internet"});
-            typeOfItems.Add(new ServiceType() { Type1 = "Numer komórkowy"});
-            typeOfItems.Add(new ServiceType() { Type1 = "Pakiet internet + numer"});
+            List<ServiceType> typeOfItems = new List<ServiceType>()
+            {
+                new ServiceType() { Id=1, Type1 = "Numer komórkowy"},
+                new ServiceType() { Id=2, Type1 = "Internet"},
+                new ServiceType() { Id=3, Type1 = "Pakiet internet + numer"}
+            };
 
             serviceType.ItemsSource = typeOfItems;
+            serviceType.DisplayMemberPath = "Type1";
+            serviceType.SelectedValuePath = "Id";
 
-            
+
+
+
+        }
+        private void BindNameOfItems(int nameOfItemsId)
+        {
             List<ServiceName> nameOfItems = new List<ServiceName>();
-            nameOfItems.Add(new ServiceName() { Name = "Plan 40", });
-            nameOfItems.Add(new ServiceName() { Name = "Plan 50", });
-            nameOfItems.Add(new ServiceName() { Name = "Plan 60", });
-            nameOfItems.Add(new ServiceName() { Name = "Plan 80", });
-            nameOfItems.Add(new ServiceName() { Name = "Internet domowy", });
-            nameOfItems.Add(new ServiceName() { Name = "Internet + TV", });
-            nameOfItems.Add(new ServiceName() { Name = "Pakiet Standard", });
-            nameOfItems.Add(new ServiceName() { Name = "Pakiet Extra", });
-            nameOfItems.Add(new ServiceName() { Name = "Pakiet Premium", });
-
+            if (nameOfItemsId == 1)
+            {
+                nameOfItems = new List<ServiceName>()
+                {
+                new ServiceName() { Id=1, Name = "Plan 40"},
+                new ServiceName() { Id=2, Name = "Plan 50"},
+                new ServiceName() { Id=3, Name = "Plan 60"},
+                new ServiceName() { Id=4, Name = "Plan 80"}
+                };
+            }
+            else if (nameOfItemsId == 2)
+            {
+                nameOfItems = new List<ServiceName>()
+                {
+                new ServiceName() { Id=1, Name = "Internet domowy"},
+                new ServiceName() { Id=2, Name = "Internet + TV"}
+                };
+            }
+            else if (nameOfItemsId == 3)
+            {
+                nameOfItems = new List<ServiceName>()
+                {
+                new ServiceName() { Id = 1, Name = "Pakiet Standard"},
+                new ServiceName() { Id = 2, Name = "Pakiet Extra"},
+                new ServiceName() { Id = 3, Name = "Pakiet Premium"}
+                };
+            }
             serviceName.ItemsSource = nameOfItems;
+            serviceName.DisplayMemberPath = "Name";
+            serviceName.SelectedValuePath = "Id";
         }
 
         private void Save_Button_Click(object sender, RoutedEventArgs e)
@@ -80,19 +111,28 @@ namespace Formatka
 
         //}
 
-    }
-    public class ServiceType
-    {
-        public string Type1 { get; set; }
-    }
-    public class ContractDuration
-    {
-        public string Duration { get; set; }
-    }
-    public class ServiceName
-    {
-        public string Name { get; set; }
-    }
 
+        private void ServiceChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int TypeId = Convert.ToInt32(serviceType.SelectedValue);
+            BindNameOfItems(TypeId);
+        }
 
+        public class ServiceType
+        {
+            public int Id { get; set; }
+            public string Type1 { get; set; }
+        }
+        public class ContractDuration
+        {
+            public int Id { get; set; }
+            public string Duration { get; set; }
+        }
+        public class ServiceName
+        {
+            public int Id { get; set; }
+            public string Name { get; set; }
+        }
+
+    }
 }

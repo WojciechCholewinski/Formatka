@@ -88,27 +88,17 @@
 
                     <WrapPanel Orientation="Vertical" Margin="10">
                         <Label FontFamily="Poppins" FontSize="13" >Długość umowy:</Label>
-                        <ComboBox Name="contractDuration" Padding="3" MinWidth="150" IsEditable="False">
-                            <ComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <Grid Margin="2">
+                            <ComboBox ItemsSource="{Binding Duration}" Name="contractDuration" Padding="3" MinWidth="150" IsEditable="False">
+                                    <!--<Grid Margin="2">
                                         <TextBlock Text="{Binding Duration}" />
-                                    </Grid>
-                                </DataTemplate>
-                            </ComboBox.ItemTemplate>
+                                    </Grid>-->
                         </ComboBox>
                     </WrapPanel>
 
                     <WrapPanel Orientation="Vertical" Margin="10">
                         <Label FontFamily="Poppins" FontSize="13" >Rodzaj usługi:</Label>
-                        <ComboBox Name="serviceType" Padding="3" MinWidth="150" IsEditable="False">
-                            <ComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <Grid Margin="2">
-                                        <TextBlock Text="{Binding Type1}" />
-                                    </Grid>
-                                </DataTemplate>
-                            </ComboBox.ItemTemplate>
+                            <ComboBox SelectionChanged="ServiceChanged" ItemsSource="{Binding Type1}" Name="serviceType" Padding="3" MinWidth="150" IsEditable="False">
+                                    
                         </ComboBox>
                     </WrapPanel>
                     
@@ -119,14 +109,8 @@
 
                     <WrapPanel Orientation="Vertical" Margin="10">
                         <Label FontFamily="Poppins" FontSize="13" >Nazwa usługi:</Label>
-                        <ComboBox Name="serviceName" Padding="3" MinWidth="150" IsEditable="False">
-                            <ComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <Grid Margin="2">
-                                        <TextBlock Text="{Binding Name}" />
-                                    </Grid>
-                                </DataTemplate>
-                            </ComboBox.ItemTemplate>
+                            <ComboBox ItemsSource="{Binding Name}" Name="serviceName" Padding="3" MinWidth="150" IsEditable="False">
+                                    
                         </ComboBox>
                     </WrapPanel>
 
