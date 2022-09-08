@@ -23,6 +23,9 @@ namespace Formatka
     {
         public NewOrderPage()
         {
+            //MovieViewModel MovieVM;
+            //Frame Frame;
+
             InitializeComponent();
             cldSample.SelectedDate = DateTime.Now.AddDays(1);
 
@@ -55,6 +58,16 @@ namespace Formatka
 
 
         }
+        //public NewOrderPage(Frame frame, MovieViewModel movieVM)
+        //{
+        //    InitializeComponent();
+        //    this.Frame = frame;
+        //    this.MovieVM = movieVM;
+
+        //    this.Loaded += SearchPage_Loaded;
+        //    EditBtn.IsEnabled = false;
+        //    DelBtn.IsEnabled = false;
+        //}
         private void BindNameOfItems(int nameOfItemsId)
         {
             List<ServiceName> nameOfItems = new List<ServiceName>();
@@ -110,7 +123,32 @@ namespace Formatka
             //serviceType2.SelectedValuePath = "Id";
             serviceType2.Content = serviceName.SelectedValue;
         }
-        
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        private void searchBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            searchBox.Text = "";
+            searchBox.FontStretch = FontStretches.Normal;
+            searchBox.FontStyle = FontStyles.Normal;
+            searchBox.Foreground = Brushes.Black;
+        }
+        private void gridTable_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // TODO: zmienić EditBtn na button akceptujący wybranego istaniejącego już klienta
+            //if (gridTable.SelectedCells.Count == 0)
+            //{
+            //    EditBtn.IsEnabled = false;
+            //    DelBtn.IsEnabled = false;
+            //    return;
+            //}
+            //EditBtn.IsEnabled = true;
+            //DelBtn.IsEnabled = true;
+        }
+        private void Search_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
         public class ServiceType
         {
             public int Id { get; set; }

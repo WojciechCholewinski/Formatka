@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Formatka"
       mc:Ignorable="d" 
-      d:DesignHeight="800" d:DesignWidth="1300"
+      d:DesignHeight="1000" d:DesignWidth="1300"
       Title="Formatka - Dodaj nowe zamówienie">
 
     <Grid>
@@ -19,102 +19,166 @@
             </Button>
         </WrapPanel>-->
         <WrapPanel HorizontalAlignment="Center" Orientation="Vertical" VerticalAlignment="Top">
-        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
 
-            <!--Dane klienta-->
-            <WrapPanel Width="500" Orientation="Vertical" Margin="0,20,0,0" >
-                <Label Width="500" HorizontalContentAlignment="Center" FontFamily="Poppins" FontWeight="Medium"  FontSize="15" BorderBrush="#D4E4FC" BorderThickness="2" Padding="10" Background="#DCE8FA" >Dane klienta</Label>
+                <!--Dane klienta-->
+                <WrapPanel Width="500" Orientation="Vertical" Margin="0,20,0,0" >
+                    <Label Width="500" HorizontalContentAlignment="Center" FontFamily="Poppins" FontWeight="Medium"  FontSize="15" BorderBrush="#D4E4FC" BorderThickness="2" Padding="10" Background="#DCE8FA" >Dane klienta</Label>
 
-                <!--Imię i nazwisko-->
-                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" >
-                    <WrapPanel Orientation="Vertical" Margin="10">
-                        <Label FontFamily="Poppins" FontSize="13" >Imię:</Label>
-                        <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
+                    <Label Width="450" HorizontalContentAlignment="Center" FontFamily="Poppins" FontWeight="Medium"  FontSize="12" BorderBrush="#D4E4FC" BorderThickness="2" Padding="10" Margin="0,20,0,0" Background="#DCE8FA" >Istniejący klient</Label>
+
+                    <TextBox 
+                        x:Name="searchBox"
+                        ForceCursor="True"
+                        
+                        HorizontalAlignment="Center"
+                        Height="20"
+                        Margin="15"
+                        TextAlignment="Justify"
+                        FontSize="12"
+                        TextWrapping="Wrap"
+                        Text="Wpisz PESEL klienta"
+                        FontStyle="Italic"
+                        FontWeight="Light"
+                        VerticalAlignment="Top"
+                        Width="300"
+                        MaxLines="1"
+                        MinLines="1"
+                        GotFocus="searchBox_GotFocus"/>
+                    <Label 
+                        x:Name="WarningSearchLabel"
+                        Content="* Wpisz PESEL"
+                        Foreground="Red"
+                        FontSize="30"
+                        Visibility="Hidden"
+                        HorizontalAlignment="Left"
+                        Margin="80,80,0,0"
+                        VerticalAlignment="Top"/>
+                    <Button
+                        Content="Search"
+                        HorizontalAlignment="Center"
+                        Margin="20"
+                        VerticalAlignment="Top" 
+                        Width="100"
+                        Height="20"
+                        Foreground="WhiteSmoke"
+                        Background="#13242C"
+                        Click="Search_Click"
+                    />
+                    <DataGrid x:Name="gridTable"
+                        AlternatingRowBackground="#576E66"
+                        HorizontalScrollBarVisibility="Disabled"
+                        VerticalScrollBarVisibility="Auto"
+                        MinColumnWidth="80"
+                        IsReadOnly="True"
+                        ItemsSource="{Binding}"
+                        HorizontalAlignment="Center"
+                        Height="135"
+                        Margin="0,0,0,0"
+                        VerticalAlignment="Top"
+                        MinWidth="400"
+                        FrozenColumnCount="8"
+                        SelectionMode="Single"
+                        SelectionChanged="gridTable_SelectionChanged">
+                    </DataGrid>
+
+                    <!--Style="{DynamicResource CaptureIt}"-->
+                    <!--GotFocus="searchBox_GotFocus"-->
+                    <!--Click="Search_Click"-->
+                    <!--SelectionChanged="gridTable_SelectionChanged"-->
+
+                    <Label Width="450" HorizontalContentAlignment="Center" FontFamily="Poppins" FontWeight="Medium"  FontSize="12" BorderBrush="#D4E4FC" BorderThickness="2" Padding="10" Margin="0,30,0,0" Background="#DCE8FA" >Nowy klient</Label>
+
+                    <!--Imię i nazwisko-->
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                        <WrapPanel Orientation="Vertical" Margin="10">
+                            <Label FontFamily="Poppins" FontSize="13" >Imię:</Label>
+                            <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
+                        </WrapPanel>
+
+                        <WrapPanel Orientation="Vertical" Margin="10">
+                            <Label FontFamily="Poppins" FontSize="13" >Nazwisko:</Label>
+                            <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
+                        </WrapPanel>
                     </WrapPanel>
 
-                    <WrapPanel Orientation="Vertical" Margin="10">
-                        <Label FontFamily="Poppins" FontSize="13" >Nazwisko:</Label>
-                        <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
+                    <!--PESEL i Numer dowodu-->
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                        <WrapPanel Orientation="Vertical" Margin="10">
+                            <Label FontFamily="Poppins" FontSize="13" >PESEL:</Label>
+                            <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
+                        </WrapPanel>
+
+                        <WrapPanel Orientation="Vertical" Margin="10">
+                            <Label FontFamily="Poppins" FontSize="13" >Numer dowodu:</Label>
+                            <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
+                        </WrapPanel>
                     </WrapPanel>
+
+                    <!--Mail i numer kontaktowy-->
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                        <WrapPanel Orientation="Vertical" Margin="10">
+                            <Label FontFamily="Poppins" FontSize="13" >Mail:</Label>
+                            <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
+                        </WrapPanel>
+
+                        <WrapPanel Orientation="Vertical" Margin="10">
+                            <Label FontFamily="Poppins" FontSize="13" >Numer kontaktowy:</Label>
+                            <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
+                        </WrapPanel>
+                    </WrapPanel>
+
+                    <!--Adres główny i Adres dostawy/instalacji-->
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                        <WrapPanel Orientation="Vertical" Margin="10">
+                            <Label FontFamily="Poppins" FontSize="13" >Adres główny:</Label>
+                            <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
+                        </WrapPanel>
+
+                        <WrapPanel Orientation="Vertical" Margin="10">
+                            <Label FontFamily="Poppins" FontSize="13" >Adres dostawy/instalacji:</Label>
+                            <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
+                        </WrapPanel>
+                    </WrapPanel>
+
                 </WrapPanel>
 
-                <!--PESEL i Numer dowodu-->
-                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" >
-                    <WrapPanel Orientation="Vertical" Margin="10">
-                        <Label FontFamily="Poppins" FontSize="13" >PESEL:</Label>
-                        <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
-                    </WrapPanel>
-
-                    <WrapPanel Orientation="Vertical" Margin="10">
-                        <Label FontFamily="Poppins" FontSize="13" >Numer dowodu:</Label>
-                        <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
-                    </WrapPanel>
-                </WrapPanel>
-
-                <!--Mail i numer kontaktowy-->
-                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" >
-                    <WrapPanel Orientation="Vertical" Margin="10">
-                        <Label FontFamily="Poppins" FontSize="13" >Mail:</Label>
-                        <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
-                    </WrapPanel>
-
-                    <WrapPanel Orientation="Vertical" Margin="10">
-                        <Label FontFamily="Poppins" FontSize="13" >Numer kontaktowy:</Label>
-                        <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
-                    </WrapPanel>
-                </WrapPanel>
-
-                <!--Adres główny i Adres dostawy/instalacji-->
-                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" >
-                    <WrapPanel Orientation="Vertical" Margin="10">
-                        <Label FontFamily="Poppins" FontSize="13" >Adres główny:</Label>
-                        <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
-                    </WrapPanel>
-
-                    <WrapPanel Orientation="Vertical" Margin="10">
-                        <Label FontFamily="Poppins" FontSize="13" >Adres dostawy/instalacji:</Label>
-                        <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
-                    </WrapPanel>
-                </WrapPanel>
-
-            </WrapPanel>
-
-            <!--Szczegóły zamówienia-->
-            <WrapPanel Width="500" Orientation="Vertical" Margin="0,20,0,0" >
+                <!--Szczegóły zamówienia-->
+                <WrapPanel Width="500" Orientation="Vertical" Margin="0,20,0,0" >
                     <Label Width="500" HorizontalContentAlignment="Center"  FontFamily="Poppins" FontWeight="Medium" FontSize="15" BorderBrush="#D4E4FC" BorderThickness="2" Padding="10" Background="#DCE8FA">Szczegóły zamówienia</Label>
 
-                <!--Długość umowy i Rodzaj usługi-->
-                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                    <!--Długość umowy i Rodzaj usługi-->
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" >
 
-                    <WrapPanel Orientation="Vertical" Margin="10">
-                        <Label FontFamily="Poppins" FontSize="13" >Długość umowy:</Label>
+                        <WrapPanel Orientation="Vertical" Margin="10">
+                            <Label FontFamily="Poppins" FontSize="13" >Długość umowy:</Label>
                             <ComboBox ItemsSource="{Binding Duration}" Name="contractDuration" Padding="3" MinWidth="150" IsEditable="False">
-                                    <!--<Grid Margin="2">
+                                <!--<Grid Margin="2">
                                         <TextBlock Text="{Binding Duration}" />
                                     </Grid>-->
-                        </ComboBox>
-                    </WrapPanel>
+                            </ComboBox>
+                        </WrapPanel>
 
-                    <WrapPanel Orientation="Vertical" Margin="10">
-                        <Label FontFamily="Poppins" FontSize="13" >Rodzaj usługi:</Label>
+                        <WrapPanel Orientation="Vertical" Margin="10">
+                            <Label FontFamily="Poppins" FontSize="13" >Rodzaj usługi:</Label>
                             <ComboBox SelectionChanged="ServiceChanged" ItemsSource="{Binding Type1}" Name="serviceType" Padding="3" MinWidth="150" IsEditable="False">
-                                    
-                        </ComboBox>
+
+                            </ComboBox>
+                        </WrapPanel>
+
                     </WrapPanel>
-                    
-                </WrapPanel>
 
-                <!--Podrodzaj wybranej usługi-->
-                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                    <!--Podrodzaj wybranej usługi-->
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" >
 
-                    <WrapPanel Orientation="Vertical" Margin="10">
-                        <Label FontFamily="Poppins" FontSize="13" >Nazwa usługi:</Label>
+                        <WrapPanel Orientation="Vertical" Margin="10">
+                            <Label FontFamily="Poppins" FontSize="13" >Nazwa usługi:</Label>
                             <ComboBox SelectionChanged="NameOfServiceChanged" ItemsSource="{Binding Name}" Name="serviceName" Padding="3" MinWidth="150" IsEditable="False">
-                                    
-                        </ComboBox>
-                    </WrapPanel>
 
-                    <!--<WrapPanel Orientation="Vertical" Margin="10">
+                            </ComboBox>
+                        </WrapPanel>
+
+                        <!--<WrapPanel Orientation="Vertical" Margin="10">
                         <Label FontFamily="Poppins" FontSize="13" >Data montażu:</Label>
                         <ComboBox Name="serviceType2" Padding="3" MinWidth="150" IsEditable="False">
                             <ComboBoxItem>ComboBox Item #1</ComboBoxItem>
@@ -126,24 +190,24 @@
                         <WrapPanel Orientation="Vertical" Margin="10">
                             <Label FontFamily="Poppins" FontSize="13" >Miesięczny koszt:</Label>
                             <Label Name="serviceType2" Padding="3" MinHeight="20" MinWidth="150" >
-                                
+
                             </Label>
 
-                            
+
                         </WrapPanel>
 
                     </WrapPanel>
 
-                <!--Kalendarz-->
-                <StackPanel HorizontalAlignment="Center"  Margin="10">
-                    <Label FontFamily="Poppins" FontSize="13" >Wybierz datę instalacji:</Label>
-                    <Calendar Name="cldSample" SelectionMode="MultipleRange" SelectedDate="10.10.2013" />
-                    <Label HorizontalContentAlignment="Center" >Wybrana data:</Label>
-                    <TextBox Width="100" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" TextAlignment="Center" Text="{Binding ElementName=cldSample, Path=SelectedDate, StringFormat=dd-MM-yyyy, UpdateSourceTrigger=PropertyChanged}" />
-                </StackPanel>
+                    <!--Kalendarz-->
+                    <StackPanel HorizontalAlignment="Center"  Margin="10">
+                        <Label FontFamily="Poppins" FontSize="13" >Wybierz datę instalacji:</Label>
+                        <Calendar Name="cldSample" SelectionMode="MultipleRange" SelectedDate="10.10.2013" />
+                        <Label HorizontalContentAlignment="Center" >Wybrana data:</Label>
+                        <TextBox Width="100" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" TextAlignment="Center" Text="{Binding ElementName=cldSample, Path=SelectedDate, StringFormat=dd-MM-yyyy, UpdateSourceTrigger=PropertyChanged}" />
+                    </StackPanel>
 
+                </WrapPanel>
             </WrapPanel>
-        </WrapPanel>
 
             <!--Przycisk zapisz zamówienie-->
             <WrapPanel>
