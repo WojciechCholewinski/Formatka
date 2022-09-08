@@ -109,21 +109,30 @@
 
                     <WrapPanel Orientation="Vertical" Margin="10">
                         <Label FontFamily="Poppins" FontSize="13" >Nazwa usługi:</Label>
-                            <ComboBox ItemsSource="{Binding Name}" Name="serviceName" Padding="3" MinWidth="150" IsEditable="False">
+                            <ComboBox SelectionChanged="NameOfServiceChanged" ItemsSource="{Binding Name}" Name="serviceName" Padding="3" MinWidth="150" IsEditable="False">
                                     
                         </ComboBox>
                     </WrapPanel>
 
-                    <WrapPanel Orientation="Vertical" Margin="10">
+                    <!--<WrapPanel Orientation="Vertical" Margin="10">
                         <Label FontFamily="Poppins" FontSize="13" >Data montażu:</Label>
                         <ComboBox Name="serviceType2" Padding="3" MinWidth="150" IsEditable="False">
                             <ComboBoxItem>ComboBox Item #1</ComboBoxItem>
                             <ComboBoxItem>ComboBox Item #2</ComboBoxItem>
                             <ComboBoxItem>ComboBox Item #3</ComboBoxItem>
                         </ComboBox>
-                    </WrapPanel>
+                    </WrapPanel>-->
 
-                </WrapPanel>
+                        <WrapPanel Orientation="Vertical" Margin="10">
+                            <Label FontFamily="Poppins" FontSize="13" >Miesięczny koszt:</Label>
+                            <Label Name="serviceType2" Padding="3" MinHeight="20" MinWidth="150" >
+                                
+                            </Label>
+
+                            
+                        </WrapPanel>
+
+                    </WrapPanel>
 
                 <!--Kalendarz-->
                 <StackPanel HorizontalAlignment="Center"  Margin="10">

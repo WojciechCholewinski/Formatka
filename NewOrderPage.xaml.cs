@@ -42,9 +42,9 @@ namespace Formatka
 
             List<ServiceType> typeOfItems = new List<ServiceType>()
             {
-                new ServiceType() { Id=1, Type1 = "Numer komórkowy"},
-                new ServiceType() { Id=2, Type1 = "Internet"},
-                new ServiceType() { Id=3, Type1 = "Pakiet internet + numer"}
+                new ServiceType() { Id=1, Type1 = "Mobilne"},
+                new ServiceType() { Id=2, Type1 = "Stacjonarne"},
+                new ServiceType() { Id=3, Type1 = "Konwergentne"}
             };
 
             serviceType.ItemsSource = typeOfItems;
@@ -97,27 +97,20 @@ namespace Formatka
             MessageBox.Show("Zamówienie zapisano", "Udało się", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
-        //private void Internet_Button_Click(object sender, RoutedEventArgs e)
-        //{
-
-        //}
-        //private void Mobile_Number_Button_Click(object sender, RoutedEventArgs e)
-        //{
-
-        //}
-
-        //private void Package_Button_Click(object sender, RoutedEventArgs e)
-        //{
-
-        //}
-
-
         private void ServiceChanged(object sender, SelectionChangedEventArgs e)
         {
             int TypeId = Convert.ToInt32(serviceType.SelectedValue);
             BindNameOfItems(TypeId);
         }
-
+        private void NameOfServiceChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //int NameId = Convert.ToInt32(serviceName.SelectedValue);
+            //serviceType2.ItemsSource = serviceName.SelectedValuePath;
+            //serviceType2.DisplayMemberPath = "Name";
+            //serviceType2.SelectedValuePath = "Id";
+            serviceType2.Content = serviceName.SelectedValue;
+        }
+        
         public class ServiceType
         {
             public int Id { get; set; }
@@ -134,5 +127,6 @@ namespace Formatka
             public string Name { get; set; }
         }
 
+      
     }
 }
