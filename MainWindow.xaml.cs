@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Formatka.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace Formatka
     /// </summary>
     public partial class MainWindow : NavigationWindow
     {
+        public FormatkaViewModel FormatkaVM { get; set; }
         public MainWindow()
         {
             InitializeComponent();
+            FormatkaVM = new FormatkaViewModel();
+            //Frame.Navigate(new HomePage(Frame, FormatkaVM));
         }
     }
 }

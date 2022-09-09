@@ -99,6 +99,6 @@ namespace Formatka.Model
             }
         }
 
-        //
+        
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Formatka.Model;
+using Formatka.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,11 +23,10 @@ namespace Formatka
     /// </summary>
     public partial class NewOrderPage : Page
     {
+        FormatkaViewModel FormatkaVM;
+        Frame Frame;
         public NewOrderPage()
         {
-            //MovieViewModel MovieVM;
-            //Frame Frame;
-
             InitializeComponent();
             cldSample.SelectedDate = DateTime.Now.AddDays(1);
 
@@ -59,7 +59,23 @@ namespace Formatka
 
 
         }
-        //
+        public NewOrderPage(Frame frame, FormatkaViewModel FormatkaVM)
+        {
+            InitializeComponent();
+            this.Frame = frame;
+            this.FormatkaVM = FormatkaVM;
+
+            this.Loaded += NewOrderPage_Loaded;
+            //EditBtn.IsEnabled = false;
+            //DelBtn.IsEnabled = false;
+        }
+        private void NewOrderPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            searchBox.Focusable = true;
+            Keyboard.Focus(searchBox);
+        }
+
+
         private void BindNameOfItems(int nameOfItemsId)
         {
             List<ServiceName> nameOfItems = new List<ServiceName>();
@@ -138,16 +154,16 @@ namespace Formatka
         }
         private void Search_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: Edytować Search_Click
-            //if (searchBox.Text == "")
-            //{
-            //    WarningSearchLabel.Visibility = Visibility.Visible;
-            //    return;
-            //}
+        //TODO: Edytować Search_Click
+            if (searchBox.Text == "")
+            {
+                WarningSearchLabel.Visibility = Visibility.Visible;
+                return;
+            }
 
-            //WarningSearchLabel.Visibility = Visibility.Hidden;
-            //gridTable.DataContext = MovieVM.searchRepo(searchBox.Text);
-            //gridTable.Columns[0].Visibility = Visibility.Hidden;        // Hides the first column i.e. ID
+            WarningSearchLabel.Visibility = Visibility.Hidden;
+            gridTable.DataContext = FormatkaVM.searchRepo(searchBox.Text);
+            gridTable.Columns[0].Visibility = Visibility.Hidden;        // Hides the first column i.e. ID
 
             //if (gridTable.SelectedCells.Count == 0)         // Disanle the Edit and Delete Button if no row selected
             //{
