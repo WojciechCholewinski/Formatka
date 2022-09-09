@@ -95,12 +95,12 @@
                     <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" >
                         <WrapPanel Orientation="Vertical" Margin="10">
                             <Label FontFamily="Poppins" FontSize="13" >Imię:</Label>
-                            <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
+                            <TextBox x:Name="First_Name_TBox" GotFocus="First_Name_TBox_GotFocus" LostFocus="First_Name_TBox_LostFocus" Text="Kamil" Foreground="Gray" Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
                         </WrapPanel>
 
                         <WrapPanel Orientation="Vertical" Margin="10">
                             <Label FontFamily="Poppins" FontSize="13" >Nazwisko:</Label>
-                            <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
+                            <TextBox x:Name="Surname_TBox" GotFocus="Surname_TBox_GotFocus" LostFocus="Surname_TBox_LostFocus" Text="Kowalski" Foreground="Gray" Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
                         </WrapPanel>
                     </WrapPanel>
 
@@ -108,12 +108,12 @@
                     <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" >
                         <WrapPanel Orientation="Vertical" Margin="10">
                             <Label FontFamily="Poppins" FontSize="13" >PESEL:</Label>
-                            <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
+                            <TextBox x:Name="PESEL_TBox" GotFocus="PESEL_TBox_GotFocus" LostFocus="PESEL_TBox_LostFocus" Text="00000000000" Foreground="Gray" Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
                         </WrapPanel>
 
                         <WrapPanel Orientation="Vertical" Margin="10">
                             <Label FontFamily="Poppins" FontSize="13" >Numer dowodu:</Label>
-                            <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
+                            <TextBox x:Name="Id_card_number_TBox" GotFocus="Id_card_number_TBox_GotFocus" LostFocus="Id_card_number_TBox_LostFocus" Text="ABC123456" Foreground="Gray" Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
                         </WrapPanel>
                     </WrapPanel>
 
@@ -121,12 +121,12 @@
                     <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" >
                         <WrapPanel Orientation="Vertical" Margin="10">
                             <Label FontFamily="Poppins" FontSize="13" >Mail:</Label>
-                            <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
+                            <TextBox x:Name="Mail_TBox" GotFocus="Mail_TBox_GotFocus" LostFocus="Mail_TBox_LostFocus" Text="adresmailowy@mail.com" Foreground="Gray" Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
                         </WrapPanel>
 
                         <WrapPanel Orientation="Vertical" Margin="10">
                             <Label FontFamily="Poppins" FontSize="13" >Numer kontaktowy:</Label>
-                            <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
+                            <TextBox x:Name="Phone_Number_TBox" GotFocus="Phone_Number_TBox_GotFocus" LostFocus="Phone_Number_TBox_LostFocus" Text="123456789" Foreground="Gray" Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
                         </WrapPanel>
                     </WrapPanel>
 
@@ -134,12 +134,12 @@
                     <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" >
                         <WrapPanel Orientation="Vertical" Margin="10">
                             <Label FontFamily="Poppins" FontSize="13" >Adres główny:</Label>
-                            <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
+                            <TextBox x:Name="Main_Address_TBox" GotFocus="Main_Address_TBox_GotFocus" LostFocus="Main_Address_TBox_LostFocus" Text="Długa 52 35-303 Warszawa" Foreground="Gray" Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
                         </WrapPanel>
 
                         <WrapPanel Orientation="Vertical" Margin="10">
                             <Label FontFamily="Poppins" FontSize="13" >Adres dostawy/instalacji:</Label>
-                            <TextBox Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
+                            <TextBox x:Name="Correspondence_Address_TBox" GotFocus="Correspondence_Address_TBox_GotFocus" LostFocus="Correspondence_Address_TBox_LostFocus" Text="Długa 52 35-303 Warszawa" Foreground="Gray" Padding="3" MinWidth="150" BorderBrush="#D4E4FC" BorderThickness="1" Background="#EEF3FC" VerticalContentAlignment="Center" ></TextBox>
                         </WrapPanel>
                     </WrapPanel>
 

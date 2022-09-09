@@ -25,15 +25,16 @@ namespace Formatka
     {
         FormatkaViewModel FormatkaVM;
         Frame Frame;
+        Color color = (Color)ColorConverter.ConvertFromString("#D4E4FC");
         public NewOrderPage()
         {
             InitializeComponent();
-            
+
 
             //Services services = new Services();
             //typeOfInternet.ItemsSource = services.ToString();
 
-            
+
         }
         public NewOrderPage(Frame frame, FormatkaViewModel FormatkaVM)
         {
@@ -116,6 +117,193 @@ namespace Formatka
             serviceName.SelectedValuePath = "Id";
         }
 
+        /*
+         * Function: Event Handler for TextBox_GotFocus Event
+         */
+        private void First_Name_TBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            First_Name_TBox.Text = "";
+            First_Name_TBox.FontStyle = FontStyles.Normal;
+            First_Name_TBox.FontWeight = FontWeights.Normal;
+            First_Name_TBox.Foreground = Brushes.Black;
+        }
+
+        /*
+         * Function: Event Handler for TextBox_GotFocus Event
+         */
+        private void Surname_TBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            Surname_TBox.Text = "";
+            Surname_TBox.FontStyle = FontStyles.Normal;
+            Surname_TBox.FontWeight = FontWeights.Normal;
+            Surname_TBox.Foreground = Brushes.Black;
+        }
+
+        /*
+        * Function: Event Handler for TextBox_GotFocus Event
+        */
+        private void PESEL_TBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            PESEL_TBox.Text = "";
+            PESEL_TBox.FontStyle = FontStyles.Normal;
+            PESEL_TBox.FontWeight = FontWeights.Normal;
+            PESEL_TBox.Foreground = Brushes.Black;
+        }
+
+        /*
+        * Function: Event Handler for TextBox_GotFocus Event
+        */
+        private void Id_card_number_TBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            Id_card_number_TBox.Text = "";
+            Id_card_number_TBox.FontStyle = FontStyles.Normal;
+            Id_card_number_TBox.FontWeight = FontWeights.Normal;
+            Id_card_number_TBox.Foreground = Brushes.Black;
+        }
+        //TODO: ADD: Function: Event Handler for TextBox_GotFocus Event
+        private void Mail_TBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            Mail_TBox.Text = "";
+            Mail_TBox.FontStyle = FontStyles.Normal;
+            Mail_TBox.FontWeight = FontWeights.Normal;
+            Mail_TBox.Foreground = Brushes.Black;
+        }
+
+        private void Phone_Number_TBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            Phone_Number_TBox.Text = "";
+            Phone_Number_TBox.FontStyle = FontStyles.Normal;
+            Phone_Number_TBox.FontWeight = FontWeights.Normal;
+            Phone_Number_TBox.Foreground = Brushes.Black;
+        }
+
+        private void Main_Address_TBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            Main_Address_TBox.Text = "";
+            Main_Address_TBox.FontStyle = FontStyles.Normal;
+            Main_Address_TBox.FontWeight = FontWeights.Normal;
+            Main_Address_TBox.Foreground = Brushes.Black;
+        }
+
+        private void Correspondence_Address_TBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            Correspondence_Address_TBox.Text = "";
+            Correspondence_Address_TBox.FontStyle = FontStyles.Normal;
+            Correspondence_Address_TBox.FontWeight = FontWeights.Normal;
+            Correspondence_Address_TBox.Foreground = Brushes.Black;
+        }
+
+
+
+        private void First_Name_TBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (First_Name_TBox.Text == string.Empty)
+            {
+                First_Name_TBox.BorderBrush = Brushes.Red;
+            }
+            else
+            {
+                First_Name_TBox.BorderBrush = new SolidColorBrush(color);
+            }
+        }
+
+        private void Surname_TBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (Surname_TBox.Text == string.Empty)
+            {
+                Surname_TBox.BorderBrush = Brushes.Red;
+            }
+            else
+            {
+                Surname_TBox.BorderBrush = new SolidColorBrush(color);
+            }
+        }
+
+        private void PESEL_TBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (PESEL_TBox.Text == string.Empty)
+            {
+                PESEL_TBox.BorderBrush = Brushes.Red;
+            }
+            else
+            {
+                PESEL_TBox.BorderBrush = new SolidColorBrush(color);
+            }
+        }
+
+        private void Id_card_number_TBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (Id_card_number_TBox.Text == string.Empty)
+            {
+                Id_card_number_TBox.BorderBrush = Brushes.Red;
+            }
+            else
+            {
+                Id_card_number_TBox.BorderBrush = new SolidColorBrush(color);
+            }
+        }
+
+        private void Mail_TBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (Mail_TBox.Text == string.Empty)
+            {
+                Mail_TBox.BorderBrush = Brushes.Red;
+            }
+            else
+            {
+                Mail_TBox.BorderBrush = new SolidColorBrush(color);
+            }
+        }
+
+        private void Phone_Number_TBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (Phone_Number_TBox.Text == string.Empty)
+            {
+                Phone_Number_TBox.BorderBrush = Brushes.Red;
+            }
+            else
+            {
+                Phone_Number_TBox.BorderBrush = new SolidColorBrush(color);
+            }
+        }
+
+        private void Main_Address_TBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (Main_Address_TBox.Text == string.Empty)
+            {
+                Main_Address_TBox.BorderBrush = Brushes.Red;
+            }
+            else
+            {
+                Main_Address_TBox.BorderBrush = new SolidColorBrush(color);
+            }
+        }
+
+        private void Correspondence_Address_TBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (Correspondence_Address_TBox.Text == string.Empty)
+            {
+                Correspondence_Address_TBox.BorderBrush = Brushes.Red;
+            }
+            else
+            {
+                Correspondence_Address_TBox.BorderBrush = new SolidColorBrush(color);
+            }
+        }
+
+        //private void AllBrushesBright()
+        //{
+        //    Color color = (Color)ColorConverter.ConvertFromString("#D4E4FC");
+        //    First_Name_TBox.BorderBrush = new SolidColorBrush(color);
+        //    Surname_TBox.BorderBrush = new SolidColorBrush(color);
+        //    PESEL_TBox.BorderBrush = new SolidColorBrush(color);
+        //    Id_card_number_TBox.BorderBrush = new SolidColorBrush(color);
+        //    Mail_TBox.BorderBrush = new SolidColorBrush(color);
+        //    Phone_Number_TBox.BorderBrush = new SolidColorBrush(color);
+        //    Main_Address_TBox.BorderBrush = new SolidColorBrush(color);
+        //    Correspondence_Address_TBox.BorderBrush = new SolidColorBrush(color);
+        //}
+
         private void Save_Button_Click(object sender, RoutedEventArgs e)
         {
             //TODO: dodać zapisanie zamówienia
@@ -159,7 +347,7 @@ namespace Formatka
         }
         private void Search_Click(object sender, RoutedEventArgs e)
         {
-        //TODO: Edytować Search_Click
+            //TODO: Edytować Search_Click
             if (searchBox.Text == "")
             {
                 WarningSearchLabel.Visibility = Visibility.Visible;
