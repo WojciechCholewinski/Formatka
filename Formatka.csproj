@@ -55,19 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="HomePage.xaml.cs">
-      <DependentUpon>HomePage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Model\ContractDuration.cs" />
     <Compile Include="Model\FormatkaRepository.cs" />
     <Compile Include="Model\ServiceName.cs" />
     <Compile Include="Model\ServiceType.cs" />
     <Compile Include="ViewModel\FormatkaViewModel.cs" />
     <Page Include="FormatkaHome.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -19,14 +19,14 @@ namespace Formatka
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : NavigationWindow
+    public partial class MainWindow : Window
     {
         public FormatkaViewModel FormatkaVM { get; set; }
         public MainWindow()
         {
             InitializeComponent();
             FormatkaVM = new FormatkaViewModel();
-            //Frame.Navigate(new HomePage(Frame, FormatkaVM));
+            Frame.Navigate(new FormatkaHome(Frame, FormatkaVM));
         }
     }
 }

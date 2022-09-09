@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Formatka.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,15 +21,24 @@ namespace Formatka
     /// </summary>
     public partial class FormatkaHome : Page
     {
+        private Frame Frame;
+        FormatkaViewModel FormatkaVM;
         public FormatkaHome()
         {
             InitializeComponent();
         }
+        public FormatkaHome(Frame frame1, FormatkaViewModel formatkaVM)
+        {
+            InitializeComponent();
+            this.Frame = frame1;
+            this.FormatkaVM = formatkaVM;
+        }
         private void Add_New_Button_Click(object sender, RoutedEventArgs e)
         {
             // Open new form to create new Order
-            NewOrderPage newOrderPage = new NewOrderPage();
-            this.NavigationService.Navigate(newOrderPage);
+            //NewOrderPage newOrderPage = new NewOrderPage();
+            //this.NavigationService.Navigate(newOrderPage);
+            this.Frame.Navigate(new NewOrderPage(this.Frame, this.FormatkaVM));
         }
         private void Open_Button_Click(object sender, RoutedEventArgs e)
         {

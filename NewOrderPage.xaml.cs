@@ -28,10 +28,25 @@ namespace Formatka
         public NewOrderPage()
         {
             InitializeComponent();
-            cldSample.SelectedDate = DateTime.Now.AddDays(1);
+            
 
             //Services services = new Services();
             //typeOfInternet.ItemsSource = services.ToString();
+
+            
+        }
+        public NewOrderPage(Frame frame, FormatkaViewModel FormatkaVM)
+        {
+            InitializeComponent();
+            this.Frame = frame;
+            this.FormatkaVM = FormatkaVM;
+
+            this.Loaded += NewOrderPage_Loaded;
+            //EditBtn.IsEnabled = false;
+            //DelBtn.IsEnabled = false;
+
+
+            cldSample.SelectedDate = DateTime.Now.AddDays(7);
 
             List<ContractDuration> durationItems = new List<ContractDuration>()
             {
@@ -58,16 +73,6 @@ namespace Formatka
 
 
 
-        }
-        public NewOrderPage(Frame frame, FormatkaViewModel FormatkaVM)
-        {
-            InitializeComponent();
-            this.Frame = frame;
-            this.FormatkaVM = FormatkaVM;
-
-            this.Loaded += NewOrderPage_Loaded;
-            //EditBtn.IsEnabled = false;
-            //DelBtn.IsEnabled = false;
         }
         private void NewOrderPage_Loaded(object sender, RoutedEventArgs e)
         {
