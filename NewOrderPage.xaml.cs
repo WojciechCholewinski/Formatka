@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Formatka.Model;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -58,16 +59,7 @@ namespace Formatka
 
 
         }
-        //public NewOrderPage(Frame frame, MovieViewModel movieVM)
-        //{
-        //    InitializeComponent();
-        //    this.Frame = frame;
-        //    this.MovieVM = movieVM;
-
-        //    this.Loaded += SearchPage_Loaded;
-        //    EditBtn.IsEnabled = false;
-        //    DelBtn.IsEnabled = false;
-        //}
+        //
         private void BindNameOfItems(int nameOfItemsId)
         {
             List<ServiceName> nameOfItems = new List<ServiceName>();
@@ -146,25 +138,31 @@ namespace Formatka
         }
         private void Search_Click(object sender, RoutedEventArgs e)
         {
-            
+            // TODO: Edytować Search_Click
+            //if (searchBox.Text == "")
+            //{
+            //    WarningSearchLabel.Visibility = Visibility.Visible;
+            //    return;
+            //}
+
+            //WarningSearchLabel.Visibility = Visibility.Hidden;
+            //gridTable.DataContext = MovieVM.searchRepo(searchBox.Text);
+            //gridTable.Columns[0].Visibility = Visibility.Hidden;        // Hides the first column i.e. ID
+
+            //if (gridTable.SelectedCells.Count == 0)         // Disanle the Edit and Delete Button if no row selected
+            //{
+            //    EditBtn.IsEnabled = false;
+            //    DelBtn.IsEnabled = false;
+            //}
+            //else
+            //{
+            //    EditBtn.IsEnabled = true;
+            //    DelBtn.IsEnabled = true;
+            //}
         }
 
-        public class ServiceType
-        {
-            public int Id { get; set; }
-            public string Type1 { get; set; }
-        }
-        public class ContractDuration
-        {
-            public int Id { get; set; }
-            public string Duration { get; set; }
-        }
-        public class ServiceName
-        {
-            public int Id { get; set; }
-            public string Name { get; set; }
-        }
 
-      
+
+
     }
 }

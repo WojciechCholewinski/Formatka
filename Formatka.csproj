@@ -55,6 +55,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\ContractDuration.cs" />
+    <Compile Include="Model\FormatkaRepository.cs" />
+    <Compile Include="Model\ServiceName.cs" />
+    <Compile Include="Model\ServiceType.cs" />
+    <Compile Include="ViewModel\FormatkaViewModel.cs" />
     <Page Include="FormatkaHome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -67,6 +72,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model\Customer.cs" />
     <Compile Include="FormatkaHome.xaml.cs">
       <DependentUpon>FormatkaHome.xaml</DependentUpon>
     </Compile>
@@ -118,6 +124,9 @@
     <Resource Include="Icons\Closed_Icon.png" />
     <Resource Include="Icons\Open_Icon.png" />
     <Resource Include="Icons\Wallet_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
