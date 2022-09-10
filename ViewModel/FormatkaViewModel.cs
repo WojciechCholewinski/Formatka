@@ -10,15 +10,19 @@ namespace Formatka.ViewModel
 {
     public class FormatkaViewModel
     {
-
+        
         public ObservableCollection<Customer> Customers { get; set; }
+        //public ObservableCollection<Customer> AddCustomers { get; set; }
         private FormatkaRepository FormatkaRepository { get; set; }
 
         public FormatkaViewModel()
         {
             FormatkaRepository = new FormatkaRepository();
             Customers = new ObservableCollection<Customer>(FormatkaRepository.formatkaRepository);
+            //AddCustomers = new ObservableCollection<Customer>(FormatkaRepository.formatkaRepository);
             Customers.CollectionChanged += Customers_CollectionChanged;       // Event Handler for change in collection
+            //AddCustomers.CollectionChanged += AddCustomers_CollectionChanged;       // Event Handler for change in collection
+
         }
 
         /*
@@ -38,14 +42,23 @@ namespace Formatka.ViewModel
             return CustomersList;
         }
 
-        
+        /*
+         * Function: Add Record to Collection and Database
+         */
+        public void AddRecordToRepo(Customer customer)
+        {
+            if (customer == null)
+                throw new ArgumentNullException("Error: The argument is Null");
+            Customers.Add(customer);
+        }
+
         private void Customers_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
-            //if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
-            //{
-            //    int newIndex = e.NewStartingIndex;
-            //    FormatkaRepository.addNewRecord(Customers[newIndex]);
-            //}
+            if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+            {
+                int newIndex = e.NewStartingIndex;
+                FormatkaRepository.addNewRecord(Customers[newIndex]);
+            }
             //else if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Remove)
             //{
             //    List<Customer> tempListOfRemovedItems = e.OldItems.OfType<Movie>().ToList();

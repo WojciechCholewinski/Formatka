@@ -143,6 +143,10 @@
                         </WrapPanel>
                     </WrapPanel>
 
+                    <Button x:Name="AddBtn" Click="AddBtn_Click" HorizontalContentAlignment="Center" Width="200" FontFamily="Poppins" FontWeight="SemiBold"  FontSize="12" BorderBrush="#C9E0FF" BorderThickness="2" Padding="3" Background="#D4E4FC" Margin="0,20,0,0">
+                        Zapisz nowego klienta
+                    </Button>
+                    
                 </WrapPanel>
 
                 <!--Szczegóły zamówienia-->

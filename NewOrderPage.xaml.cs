@@ -36,10 +36,10 @@ namespace Formatka
 
 
         }
-        public NewOrderPage(Frame frame, FormatkaViewModel FormatkaVM)
+        public NewOrderPage(Frame frame1, FormatkaViewModel FormatkaVM)
         {
             InitializeComponent();
-            this.Frame = frame;
+            this.Frame = frame1;
             this.FormatkaVM = FormatkaVM;
 
             this.Loaded += NewOrderPage_Loaded;
@@ -304,6 +304,22 @@ namespace Formatka
         //    Correspondence_Address_TBox.BorderBrush = new SolidColorBrush(color);
         //}
 
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Customer customer = new Customer();
+            customer.First_Name = First_Name_TBox.Text;
+            customer.Surname = Surname_TBox.Text;
+            customer.PESEL = PESEL_TBox.Text;
+            customer.Id_card_number = Id_card_number_TBox.Text;
+            customer.Mail = Mail_TBox.Text;
+            customer.Phone_Number = Phone_Number_TBox.Text;
+            customer.Main_Address = Main_Address_TBox.Text;
+            customer.Correspondence_Address = Correspondence_Address_TBox.Text;
+
+            FormatkaVM.AddRecordToRepo(customer);
+
+            MessageBox.Show("Klienta zapisano", "Udało się", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
         private void Save_Button_Click(object sender, RoutedEventArgs e)
         {
             //TODO: dodać zapisanie zamówienia
@@ -370,8 +386,6 @@ namespace Formatka
             //}
         }
 
-
-
-
+        
     }
 }
