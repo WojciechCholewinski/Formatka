@@ -42,7 +42,7 @@ namespace Formatka
         }
         private void Open_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Frame.Navigate(new SavedOrdersPage(this.Frame, this.FormatkaVM));
         }
 
         private void Closed_Button_Click(object sender, RoutedEventArgs e)

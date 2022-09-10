@@ -57,8 +57,13 @@
     </ApplicationDefinition>
     <Compile Include="Model\ContractDuration.cs" />
     <Compile Include="Model\FormatkaRepository.cs" />
+    <Compile Include="Model\Order.cs" />
+    <Compile Include="Model\OrdersRepository.cs" />
     <Compile Include="Model\ServiceName.cs" />
     <Compile Include="Model\ServiceType.cs" />
+    <Compile Include="SavedOrdersPage.xaml.cs">
+      <DependentUpon>SavedOrdersPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\FormatkaViewModel.cs" />
     <Page Include="FormatkaHome.xaml">
       <SubType>Designer</SubType>
@@ -81,6 +86,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="NewOrderPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SavedOrdersPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

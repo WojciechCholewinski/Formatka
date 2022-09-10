@@ -43,7 +43,7 @@ namespace Formatka
             this.Frame = frame1;
             this.FormatkaVM = FormatkaVM;
 
-            this.Loaded += NewOrderPage_Loaded;
+            //this.Loaded += NewOrderPage_Loaded;
             AddBtn.IsEnabled = false;
             //DelBtn.IsEnabled = false;
             //bool allTBoxNotEmpty = First_Name_TBox.Text != string.Empty && Surname_TBox.Text != string.Empty && PESEL_TBox.Text != string.Empty && Id_card_number_TBox.Text != string.Empty && Mail_TBox.Text != string.Empty && Phone_Number_TBox.Text != string.Empty && Main_Address_TBox.Text != string.Empty && Correspondence_Address_TBox.Text != string.Empty;
@@ -77,11 +77,11 @@ namespace Formatka
 
 
         }
-        private void NewOrderPage_Loaded(object sender, RoutedEventArgs e)
-        {
-            searchBox.Focusable = true;
-            Keyboard.Focus(searchBox);
-        }
+        //private void NewOrderPage_Loaded(object sender, RoutedEventArgs e)
+        //{
+        //    searchBox.Focusable = true;
+        //    Keyboard.Focus(searchBox);
+        //}
 
 
         private void BindNameOfItems(int nameOfItemsId)
@@ -397,7 +397,7 @@ namespace Formatka
         private void Search_Click(object sender, RoutedEventArgs e)
         {
             //TODO: Edytować Search_Click
-            if (searchBox.Text == "")
+            if (searchBox.Text == "" || searchBox.Text == "Wpisz PESEL klienta")
             {
                 WarningSearchLabel.Visibility = Visibility.Visible;
                 return;

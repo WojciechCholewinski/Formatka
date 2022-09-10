@@ -25,5 +25,8 @@ namespace Formatka.Model
         public string Main_Address { get; set; }
 
         public string Correspondence_Address { get; set; }
+
+        public ICollection<Order> Orders { get; set; } = new HashSet<Order>();
+
     }
 }
