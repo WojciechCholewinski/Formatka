@@ -38,10 +38,5 @@
             </Button>
 
         </WrapPanel>
-
-        <Grid.Background>
-            <ImageBrush ImageSource="watermark.png"></ImageBrush>
-        </Grid.Background>
-            
     </Grid>
 </Page>

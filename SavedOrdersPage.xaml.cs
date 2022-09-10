@@ -33,5 +33,11 @@ namespace Formatka
             this.Frame = frame2;
             this.FormatkaVM = FormatkaVM;
         }
+        private void backBtn_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO: stosować wymiennie
+            //Frame.Navigate(new FormatkaHome(Frame, FormatkaVM));
+            this.Frame.NavigationService.GoBack();
+        }
     }
 }

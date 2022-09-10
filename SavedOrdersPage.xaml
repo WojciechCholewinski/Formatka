@@ -9,8 +9,17 @@
       Title="SavedOrdersPage">
 
     <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="watermark.png"></ImageBrush>
-        </Grid.Background>
+        <Button
+            x:Name="backBtn"
+            Style="{DynamicResource CircleShapeButtonStyle}"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Width="45"
+            Height="45"
+            Margin="40,40,0,0"
+            Click="backBtn_Click">
+            <Image Source="Icons/Back_Icon.png"/>
+        </Button>
     </Grid>
+    
 </Page>

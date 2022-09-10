@@ -419,6 +419,11 @@ namespace Formatka
             }
         }
 
-        
+        private void backBtn_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO: stosować wymiennie
+            //Frame.Navigate(new FormatkaHome(Frame, FormatkaVM));
+            this.Frame.NavigationService.GoBack();
+        }
     }
 }
