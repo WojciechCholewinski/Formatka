@@ -23,6 +23,7 @@ namespace Formatka
     /// </summary>
     public partial class NewOrderPage : Page
     {
+        int a = 0; // number of filled textboxes
         FormatkaViewModel FormatkaVM;
         Frame Frame;
         Color color = (Color)ColorConverter.ConvertFromString("#D4E4FC");
@@ -43,8 +44,9 @@ namespace Formatka
             this.FormatkaVM = FormatkaVM;
 
             this.Loaded += NewOrderPage_Loaded;
-            //EditBtn.IsEnabled = false;
+            AddBtn.IsEnabled = false;
             //DelBtn.IsEnabled = false;
+            //bool allTBoxNotEmpty = First_Name_TBox.Text != string.Empty && Surname_TBox.Text != string.Empty && PESEL_TBox.Text != string.Empty && Id_card_number_TBox.Text != string.Empty && Mail_TBox.Text != string.Empty && Phone_Number_TBox.Text != string.Empty && Main_Address_TBox.Text != string.Empty && Correspondence_Address_TBox.Text != string.Empty;
 
 
             cldSample.SelectedDate = DateTime.Now.AddDays(7);
@@ -191,6 +193,7 @@ namespace Formatka
             Correspondence_Address_TBox.FontStyle = FontStyles.Normal;
             Correspondence_Address_TBox.FontWeight = FontWeights.Normal;
             Correspondence_Address_TBox.Foreground = Brushes.Black;
+            AllTBoxNotEmpty();
         }
 
 
@@ -204,6 +207,7 @@ namespace Formatka
             else
             {
                 First_Name_TBox.BorderBrush = new SolidColorBrush(color);
+                AllTBoxNotEmpty();
             }
         }
 
@@ -216,6 +220,7 @@ namespace Formatka
             else
             {
                 Surname_TBox.BorderBrush = new SolidColorBrush(color);
+                AllTBoxNotEmpty();
             }
         }
 
@@ -228,6 +233,7 @@ namespace Formatka
             else
             {
                 PESEL_TBox.BorderBrush = new SolidColorBrush(color);
+                AllTBoxNotEmpty();
             }
         }
 
@@ -240,6 +246,7 @@ namespace Formatka
             else
             {
                 Id_card_number_TBox.BorderBrush = new SolidColorBrush(color);
+                AllTBoxNotEmpty();
             }
         }
 
@@ -252,6 +259,7 @@ namespace Formatka
             else
             {
                 Mail_TBox.BorderBrush = new SolidColorBrush(color);
+                AllTBoxNotEmpty();
             }
         }
 
@@ -264,6 +272,7 @@ namespace Formatka
             else
             {
                 Phone_Number_TBox.BorderBrush = new SolidColorBrush(color);
+                AllTBoxNotEmpty();
             }
         }
 
@@ -276,6 +285,7 @@ namespace Formatka
             else
             {
                 Main_Address_TBox.BorderBrush = new SolidColorBrush(color);
+                AllTBoxNotEmpty();
             }
         }
 
@@ -288,23 +298,34 @@ namespace Formatka
             else
             {
                 Correspondence_Address_TBox.BorderBrush = new SolidColorBrush(color);
+                AllTBoxNotEmpty();
             }
         }
 
-        //private void AllBrushesBright()
-        //{
-        //    Color color = (Color)ColorConverter.ConvertFromString("#D4E4FC");
-        //    First_Name_TBox.BorderBrush = new SolidColorBrush(color);
-        //    Surname_TBox.BorderBrush = new SolidColorBrush(color);
-        //    PESEL_TBox.BorderBrush = new SolidColorBrush(color);
-        //    Id_card_number_TBox.BorderBrush = new SolidColorBrush(color);
-        //    Mail_TBox.BorderBrush = new SolidColorBrush(color);
-        //    Phone_Number_TBox.BorderBrush = new SolidColorBrush(color);
-        //    Main_Address_TBox.BorderBrush = new SolidColorBrush(color);
-        //    Correspondence_Address_TBox.BorderBrush = new SolidColorBrush(color);
-        //}
+        private void AllTBoxNotEmpty()
+        {
+            a++;
+            if (a >= 8)
+            {
+                AddBtn.IsEnabled = true;
+            }
+        }
+                     
 
-        private void AddBtn_Click(object sender, RoutedEventArgs e)
+    //private void AllBrushesBright()
+    //{
+    //    Color color = (Color)ColorConverter.ConvertFromString("#D4E4FC");
+    //    First_Name_TBox.BorderBrush = new SolidColorBrush(color);
+    //    Surname_TBox.BorderBrush = new SolidColorBrush(color);
+    //    PESEL_TBox.BorderBrush = new SolidColorBrush(color);
+    //    Id_card_number_TBox.BorderBrush = new SolidColorBrush(color);
+    //    Mail_TBox.BorderBrush = new SolidColorBrush(color);
+    //    Phone_Number_TBox.BorderBrush = new SolidColorBrush(color);
+    //    Main_Address_TBox.BorderBrush = new SolidColorBrush(color);
+    //    Correspondence_Address_TBox.BorderBrush = new SolidColorBrush(color);
+    //}
+
+    private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
             Customer customer = new Customer();
             customer.First_Name = First_Name_TBox.Text;
@@ -319,7 +340,19 @@ namespace Formatka
             FormatkaVM.AddRecordToRepo(customer);
 
             MessageBox.Show("Klienta zapisano", "Udało się", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            First_Name_TBox.Text = string.Empty;
+            Surname_TBox.Text = string.Empty;
+            PESEL_TBox.Text = string.Empty;
+            Id_card_number_TBox.Text = string.Empty;
+            Mail_TBox.Text = string.Empty;
+            Phone_Number_TBox.Text = string.Empty;
+            Main_Address_TBox.Text = string.Empty;
+            Correspondence_Address_TBox.Text = string.Empty;
         }
+        
+
+        
         private void Save_Button_Click(object sender, RoutedEventArgs e)
         {
             //TODO: dodać zapisanie zamówienia
@@ -352,14 +385,14 @@ namespace Formatka
         private void gridTable_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             // TODO: zmienić EditBtn na button akceptujący wybranego istaniejącego już klienta
-            //if (gridTable.SelectedCells.Count == 0)
-            //{
-            //    EditBtn.IsEnabled = false;
-            //    DelBtn.IsEnabled = false;
-            //    return;
-            //}
-            //EditBtn.IsEnabled = true;
-            //DelBtn.IsEnabled = true;
+            if (gridTable.SelectedCells.Count == 0)
+            {
+                AddBtn.IsEnabled = false;
+                //DelBtn.IsEnabled = false;
+                return;
+            }
+            AddBtn.IsEnabled = true;
+            /*DelBtn.IsEnabled = true*/;
         }
         private void Search_Click(object sender, RoutedEventArgs e)
         {
@@ -374,16 +407,16 @@ namespace Formatka
             gridTable.DataContext = FormatkaVM.searchRepo(searchBox.Text);
             gridTable.Columns[0].Visibility = Visibility.Hidden;        // Hides the first column i.e. ID
 
-            //if (gridTable.SelectedCells.Count == 0)         // Disanle the Edit and Delete Button if no row selected
-            //{
-            //    EditBtn.IsEnabled = false;
-            //    DelBtn.IsEnabled = false;
-            //}
-            //else
-            //{
-            //    EditBtn.IsEnabled = true;
-            //    DelBtn.IsEnabled = true;
-            //}
+            if (gridTable.SelectedCells.Count == 0)         // Disanle the Edit and Delete Button if no row selected
+            {
+                AddBtn.IsEnabled = false;
+                //DelBtn.IsEnabled = false;
+            }
+            else
+            {
+                AddBtn.IsEnabled = true;
+                //DelBtn.IsEnabled = true;
+            }
         }
 
         
