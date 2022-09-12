@@ -10,11 +10,11 @@ namespace Formatka.Model
 {
     public class OrdersRepository
     {
-        public List<Order> orderRepository { get; set; }
+        public List<Order> ordersRepository { get; set; }
 
         public OrdersRepository()
         {
-            orderRepository = GetOrdersRepo();
+            ordersRepository = GetOrdersRepo();
         }
 
         /* Function: Returns all the records in table

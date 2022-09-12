@@ -355,6 +355,9 @@ namespace Formatka
         
         private void Save_Button_Click(object sender, RoutedEventArgs e)
         {
+            //Order order = new Order();
+            //order.Id_Customer = 
+
             //TODO: dodać zapisanie zamówienia
 
             MessageBox.Show("Zamówienie zapisano", "Udało się", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -402,10 +405,15 @@ namespace Formatka
                 WarningSearchLabel.Visibility = Visibility.Visible;
                 return;
             }
-
             WarningSearchLabel.Visibility = Visibility.Hidden;
             gridTable.DataContext = FormatkaVM.searchRepo(searchBox.Text);
             gridTable.Columns[0].Visibility = Visibility.Hidden;        // Hides the first column i.e. ID
+            gridTable.Columns[4].Visibility = Visibility.Hidden;        // Hides the first column i.e. ID
+            gridTable.Columns[5].Visibility = Visibility.Hidden;        // Hides the first column i.e. ID
+            gridTable.Columns[6].Visibility = Visibility.Hidden;        // Hides the first column i.e. ID
+            gridTable.Columns[7].Visibility = Visibility.Hidden;        // Hides the first column i.e. ID
+            gridTable.Columns[8].Visibility = Visibility.Hidden;        // Hides the first column i.e. ID
+            gridTable.Columns[9].Visibility = Visibility.Hidden;        // Hides the first column i.e. ID
 
             if (gridTable.SelectedCells.Count == 0)         // Disanle the Edit and Delete Button if no row selected
             {

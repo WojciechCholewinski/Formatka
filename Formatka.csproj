@@ -65,6 +65,7 @@
       <DependentUpon>SavedOrdersPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\FormatkaViewModel.cs" />
+    <Compile Include="ViewModel\OrdersViewModel.cs" />
     <Page Include="FormatkaHome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

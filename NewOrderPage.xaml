@@ -70,7 +70,7 @@
                         AlternatingRowBackground="#EEF3FC"
                         HorizontalScrollBarVisibility="Disabled"
                         VerticalScrollBarVisibility="Auto"
-                        ColumnWidth="130"
+                        ColumnWidth="131"
                         IsReadOnly="True"
                         ItemsSource="{Binding}"
                         HorizontalAlignment="Center"

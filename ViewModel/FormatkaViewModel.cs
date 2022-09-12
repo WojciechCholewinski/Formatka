@@ -12,13 +12,18 @@ namespace Formatka.ViewModel
     {
         
         public ObservableCollection<Customer> Customers { get; set; }
+        //public ObservableCollection<Order> Orders { get; set; }
         //public ObservableCollection<Customer> AddCustomers { get; set; }
         private FormatkaRepository FormatkaRepository { get; set; }
+        //private OrdersRepository OrdersRepository { get; set; }
 
         public FormatkaViewModel()
         {
             FormatkaRepository = new FormatkaRepository();
+            //OrdersRepository = new OrdersRepository();    // TODO: ta linijka uniemożliwia działanie programu
+
             Customers = new ObservableCollection<Customer>(FormatkaRepository.formatkaRepository);
+            //Orders = new ObservableCollection<Order>(OrdersRepository.ordersRepository);
             //AddCustomers = new ObservableCollection<Customer>(FormatkaRepository.formatkaRepository);
             Customers.CollectionChanged += Customers_CollectionChanged;       // Event Handler for change in collection
             //AddCustomers.CollectionChanged += AddCustomers_CollectionChanged;       // Event Handler for change in collection
