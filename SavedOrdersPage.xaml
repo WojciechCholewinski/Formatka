@@ -20,6 +20,12 @@
             Click="backBtn_Click">
             <Image Source="Icons/Back_Icon.png"/>
         </Button>
+        <DataGrid 
+            Style="{DynamicResource newOrdersDataGrid}"
+            Name="OrdersList"  Margin="100,100,100,100">
+1
+        </DataGrid>
     </Grid>
-    
+
+
 </Page>

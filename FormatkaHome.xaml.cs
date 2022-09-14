@@ -23,6 +23,7 @@ namespace Formatka
     {
         private Frame Frame;
         FormatkaViewModel FormatkaVM;
+        OrdersViewModel OrdersVM;
         public FormatkaHome()
         {
             InitializeComponent();
@@ -42,7 +43,7 @@ namespace Formatka
         }
         private void Open_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(new SavedOrdersPage(this.Frame, this.FormatkaVM));
+            this.Frame.Navigate(new SavedOrdersPage(this.Frame, this.OrdersVM));
         }
 
         private void Closed_Button_Click(object sender, RoutedEventArgs e)

@@ -1,4 +1,5 @@
-﻿using Formatka.ViewModel;
+﻿using Formatka.Model;
+using Formatka.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,21 +22,31 @@ namespace Formatka
     /// </summary>
     public partial class SavedOrdersPage : Page
     {
-        FormatkaViewModel FormatkaVM;
+        OrdersViewModel OrdersVM;
         Frame Frame;
+
+        //public List<Order> MyOrders { get; set; }
+
         public SavedOrdersPage()
         {
             InitializeComponent();
+
+            //using (FormatkaContext _context = new FormatkaContext())
+            //{
+            //    MyOrders = _context.Orders.ToList();
+            //}
+
+            //OrdersList.ItemsSource = MyOrders;
         }
-        public SavedOrdersPage(Frame frame2, FormatkaViewModel FormatkaVM)
+        public SavedOrdersPage(Frame frame2, OrdersViewModel OrdersVM)
         {
             InitializeComponent();
             this.Frame = frame2;
-            this.FormatkaVM = FormatkaVM;
+            this.OrdersVM = OrdersVM;
         }
         private void backBtn_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: stosować wymiennie
+            //stosować wymiennie
             //Frame.Navigate(new FormatkaHome(Frame, FormatkaVM));
             this.Frame.NavigationService.GoBack();
         }

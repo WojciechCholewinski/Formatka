@@ -7,17 +7,21 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Formatka.ViewModel
-{
+{/// <summary>
+/// 
+/// </summary>
     public class OrdersViewModel
     {
         public ObservableCollection<Order> Orders { get; set; }
         private OrdersRepository OrdersRepository { get; set; }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public OrdersViewModel()
         {
             OrdersRepository = new OrdersRepository();
 
-            Orders = new ObservableCollection<Order>(OrdersRepository.ordersRepository);
+            //Orders = new ObservableCollection<Order>(OrdersRepository.ordersRepository);
 
         }
 
@@ -26,6 +30,13 @@ namespace Formatka.ViewModel
          * Saves time and resources by searching in Collection in memory
          * rather than in database
          */
+        /// <summary>
+        /// 
+        /// </summary>
+       
+        /// <param name="searchQuery"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public List<Order> searchRepo(string searchQuery)
         {
             if (searchQuery == "*" || searchQuery == " ")

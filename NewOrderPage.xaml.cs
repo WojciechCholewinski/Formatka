@@ -358,8 +358,6 @@ namespace Formatka
             //Order order = new Order();
             //order.Id_Customer = 
 
-            //TODO: dodać zapisanie zamówienia
-
             MessageBox.Show("Zamówienie zapisano", "Udało się", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
@@ -387,7 +385,6 @@ namespace Formatka
         }
         private void gridTable_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // TODO: zmienić EditBtn na button akceptujący wybranego istaniejącego już klienta
             if (gridTable.SelectedCells.Count == 0)
             {
                 AddBtn.IsEnabled = false;
@@ -399,7 +396,6 @@ namespace Formatka
         }
         private void Search_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: Edytować Search_Click
             if (searchBox.Text == "" || searchBox.Text == "Wpisz PESEL klienta")
             {
                 WarningSearchLabel.Visibility = Visibility.Visible;
@@ -429,7 +425,7 @@ namespace Formatka
 
         private void backBtn_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: stosować wymiennie
+            //stosować wymiennie
             //Frame.Navigate(new FormatkaHome(Frame, FormatkaVM));
             this.Frame.NavigationService.GoBack();
         }

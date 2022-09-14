@@ -48,7 +48,7 @@ CREATE TABLE [dbo].Orders(
 	[Id_Customer] [INT] FOREIGN KEY REFERENCES Customers(Id) NOT NULL,
 	[Id_Service] [INT] FOREIGN KEY REFERENCES [Service_Name](Id) NOT NULL,
 	[Delivery_date] varchar (40) NOT NULL,
-	[Date_of_order] [DATE] NOT NULL
+	[Date_of_order] varchar (40) NOT NULL
 );
 GO
 

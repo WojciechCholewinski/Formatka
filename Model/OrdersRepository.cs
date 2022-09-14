@@ -10,49 +10,66 @@ namespace Formatka.Model
 {
     public class OrdersRepository
     {
-        public List<Order> ordersRepository { get; set; }
+        public List<Order> MyOrders { get; set; }
 
         public OrdersRepository()
         {
-            ordersRepository = GetOrdersRepo();
-        }
-
-        /* Function: Returns all the records in table
-         * with the help of stored procedure
-         * Used to populate the Repository (Collection)
-         */
-        public List<Order> GetOrdersRepo()
-        {
-            List<Order> listOfOrders = new List<Order>();
-
-            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.connString))
+            using (FormatkaContext _context = new FormatkaContext())
             {
-                if (conn == null)
-                {
-                    throw new Exception("Connection String is Null. Set the value of Connection String in MovieCatalog->Properties-?Settings.settings");
-                }
-
-                SqlCommand query = new SqlCommand("SELECT * from Orders", conn);
-                conn.Open();
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query);
-                DataTable dataTable = new DataTable();
-                sqlDataAdapter.Fill(dataTable);
-
-                foreach (DataRow row in dataTable.Rows)
-                {
-                    Order m = new Order();
-                    m.Id = (int)row["id"];
-                    m.Id_Customer = (int)row["Customer"];
-                    m.Id_Service = (int)row["Id_Service"];
-                    m.Delivery_date = row["Delivery_date"].ToString();
-                    m.Date_of_order = row["Date_of_order"].ToString();
-                    
-                    listOfOrders.Add(m);
-                }
-
-                return listOfOrders;
+                MyOrders = _context.Orders.ToList();
             }
+
+            SavedOrdersPage savedOrdersPage = new SavedOrdersPage();
+            savedOrdersPage.OrdersList.ItemsSource = MyOrders;
         }
+
+
+
+
+
+        //public List<Order> ordersRepository { get; set; }
+
+        //public OrdersRepository()
+        //{
+        //    ordersRepository = GetOrdersRepo();
+        //}
+
+        ///* Function: Returns all the records in table
+        // * with the help of stored procedure
+        // * Used to populate the Repository (Collection)
+        // */
+        //public List<Order> GetOrdersRepo()
+        //{
+        //    List<Order> listOfOrders = new List<Order>();
+
+        //    using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.connString))
+        //    {
+        //        if (conn == null)
+        //        {
+        //            throw new Exception("Connection String is Null. Set the value of Connection String in MovieCatalog->Properties-?Settings.settings");
+        //        }
+
+        //        SqlCommand query = new SqlCommand("SELECT * from Orders", conn);
+        //        conn.Open();
+        //        SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query);
+        //        DataTable dataTable = new DataTable();
+        //        sqlDataAdapter.Fill(dataTable);
+
+        //        foreach (DataRow row in dataTable.Rows)
+        //        {
+        //            Order m = new Order();
+        //            m.Id = (int)row["id"];
+        //            m.Id_Customer = (int)row["Customer"];
+        //            m.Id_Service = (int)row["Id_Service"];
+        //            m.Delivery_date = row["Delivery_date"].ToString();
+        //            m.Date_of_order = row["Date_of_order"].ToString();
+                    
+        //            listOfOrders.Add(m);
+        //        }
+
+        //        return listOfOrders;
+        //    }
+        //}
 
         /*
          * Function: Return records that matches the Search Query String
